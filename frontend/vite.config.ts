@@ -4,12 +4,13 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 import { defineConfig } from 'vite';
 
-const modules = path.resolve(import.meta.dirname, 'node_modules');
+const root = import.meta.dirname;
+const modules = path.resolve(root, 'node_modules');
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
+
   resolve: {
-    modules: [modules],
     alias: [
       {
         find: /^react\/jsx-runtime$/,
@@ -28,11 +29,19 @@ export default defineConfig({
         replacement: path.join(modules, 'react-dom/index.js'),
       },
       {
+        find: /^lucide-react$/,
+        replacement: path.join(
+          modules,
+          'lucide-react/dist/esm/lucide-react.js'
+        ),
+      },
+      {
         find: '@',
-        replacement: path.resolve(import.meta.dirname, '../src'),
+        replacement: path.resolve(root, '../src'),
       },
     ],
   },
+
   server: {
     fs: {
       allow: ['..'],
