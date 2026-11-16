@@ -1,0 +1,6 @@
+{
+  "name": "Hostel Management System",
+  "description": "A clean, functional full-stack web application for college hostel administration with Warden, Student, and Security Guard dashboards powered by MySQL.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
