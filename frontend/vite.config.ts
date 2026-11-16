@@ -9,6 +9,7 @@ const modules = path.resolve(import.meta.dirname, 'node_modules');
 export default defineConfig({
   plugins: [react(), tailwindcss()],
   resolve: {
+    modules: [modules],
     alias: [
       {
         find: /^react\/jsx-runtime$/,
